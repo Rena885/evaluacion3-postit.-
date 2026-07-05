@@ -1,0 +1,49 @@
+:root {
+  --color-normal: #FFFFCC;
+  --color-importante: #EC7063;
+  --color-background: #666;
+  --color-gris-oscuro: #111;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-gris-oscuro);
+  font-family: sans-serif;
+}
+
+
+.post-it-nota {
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 1.5rem;
+  padding: 15px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  height: 250px;
+  margin-bottom: 20px;
+  
+  overflow-wrap: break-word;
+  word-break: break-word;
+  overflow: hidden;
+}
+
+.post-it-normal {
+  background-color: var(--color-normal);
+}
+
+
+.post-it-importante {
+  background-color: var(--color-importante);
+}
+
+
+.btn-cerrar {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--color-gris-oscuro);
+}
