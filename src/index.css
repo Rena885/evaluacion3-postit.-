@@ -6,8 +6,8 @@
 }
 
 body {
-  background-color: var(--color-background);
-  color: var(--color-gris-oscuro);
+  background-color: var(--color-background) !important;
+  color: var(--color-gris-oscuro) !important;
   font-family: sans-serif;
 }
 
