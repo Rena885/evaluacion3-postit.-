@@ -6,29 +6,23 @@ import './index.css';
 const LOCAL_STORAGE_KEY = 'evaluacion4_postit_datos';
 
 function App() {
-  const [notas, setNotas] = useState([]);
-
- 
-  useEffect(() => {
+  // 1. LEER AL INICIO: Inicializamos el estado leyendo directamente el LocalStorage
+  const [notas, setNotas] = useState(() => {
     try {
       const notasGuardadas = localStorage.getItem(LOCAL_STORAGE_KEY);
-      if (notasGuardadas) {
-        setNotas(JSON.parse(notasGuardadas));
-      }
-    } catch (e) {
-      console.error("Error al leer LocalStorage");
+      return notasGuardadas ? JSON.parse(notasGuardadas) : [];
+    } catch (error) {
+      return [];
     }
-  }, []);
+  });
 
- 
+  // 2. GUARDAR: Cada vez que 'notas' cambie, lo guardamos en LocalStorage
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(notas));
   }, [notas]);
 
   const agregarNota = (nuevaNota) => {
-    setNotas((prevNotas) => {
-      return [...prevNotas, nuevaNota];
-    });
+    setNotas((prevNotas) => [...prevNotas, nuevaNota]);
   };
 
   const eliminarNota = (id) => {
